@@ -1,0 +1,66 @@
+<!------------------->
+Taylor Stokes
+
+COP4813
+
+Computer Science 
+
+Welcome to my program!
+
+<!------------------->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<h1 style="font-family: Arial, sans-serif; color: white; text-align: center; margin-top: 20%;" id="clock">Time:</h1>
+
+<script>
+
+// Update clock function
+function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").innerText = now.toLocaleTimeString();
+}
+
+// Function of changing color which statement
+function changeColor() {
+    const now = new Date();
+    const currentHours = now.getHours();
+
+    switch (true) {
+        case (currentHours >= 6 && currentHours <= 12):
+            document.body.style.backgroundColor = 'lightblue';
+            break;
+        case (currentHours > 12 && currentHours <= 18):
+            document.body.style.backgroundColor = 'orange';
+            break;
+        case (currentHours > 18 && currentHours <= 21):
+            document.body.style.backgroundColor = 'darkorange';
+            break;
+        case (currentHours > 21 || currentHours < 6):
+            document.body.style.backgroundColor = 'black';
+            break;
+        default:
+            document.body.style.backgroundColor = 'white';
+            break;
+    }
+
+    console.log("Current hour:", currentHours);
+}
+// Calling functions
+changeColor();
+updateClock();
+
+// Intervals of functions
+setInterval(changeColor, 900000);
+setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
