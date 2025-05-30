@@ -34,6 +34,8 @@ function changeColor() {
     const now = new Date();
     const currentHours = now.getHours();
 
+    console.log("Running changeColor()");
+
     switch (true) {
         case (currentHours >= 6 && currentHours <= 12):
             document.body.style.backgroundColor = 'lightblue';
@@ -59,7 +61,7 @@ changeColor();
 updateClock();
 
 // Intervals of functions
-setInterval(changeColor, 900000);
+setInterval(changeColor, 15000);
 setInterval(updateClock, 1000);
 </script>
 
